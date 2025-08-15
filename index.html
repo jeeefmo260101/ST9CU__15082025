@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografik Capaian Zona Integritas - BPS Provinsi Sumatera Utara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Palette: Brilliant Blues -->
+    <!-- Narrative Plan: Header -> Intro & Key Achievements -> Six Pillars -> Deep Dive on Metrics -> Transparency Award -> Footer -->
+    <!-- Visualization Plan: -->
+    <!-- Key Indices (IKK, IPAK, SAKIP, IPP) -> Goal: Inform/Compare -> Visualization: Donut Charts -> Justification: Shows score out of 100 effectively -> Library: Chart.js (Canvas, NO SVG) -->
+    <!-- Six Pillars -> Goal: Organize -> Visualization: Styled HTML Cards -> Justification: Structural element, no chart needed -> Library: Tailwind CSS (NO SVG, NO Mermaid JS) -->
+    <!-- 'Informatif' Award -> Goal: Inform -> Visualization: Styled HTML Card -> Justification: Highlights a key qualitative achievement -> Library: Tailwind CSS (NO SVG) -->
+    <!-- Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. -->
+
+    <header class="bg-[#005F73] text-white p-8 text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Capaian Pembangunan Zona Integritas</h1>
+        <p class="mt-2 text-xl md:text-2xl font-light text-[#94D2BD]">BPS Provinsi Sumatera Utara - Tahun 2024</p>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-10">
+
+        <section id="intro" class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4">Mewujudkan Birokrasi Bersih dan Melayani</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+                Pembangunan Zona Integritas (ZI) adalah komitmen BPS Provinsi Sumatera Utara untuk menciptakan pemerintahan yang transparan, akuntabel, dan bebas dari korupsi. Melalui 6 pilar reformasi, kami terus berinovasi untuk memberikan pelayanan publik berkualitas prima.
+            </p>
+        </section>
+
+        <section id="pillars" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">Enam Pilar Utama Pembangunan ZI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">🔄</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Manajemen Perubahan</h3>
+                    </div>
+                    <p class="text-gray-600">Membangun budaya kerja yang positif dan pola pikir yang berorientasi pada pelayanan melalui program internal yang inovatif dan partisipatif.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">📋</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Penataan Tatalaksana</h3>
+                    </div>
+                    <p class="text-gray-600">Meningkatkan efisiensi proses kerja dengan pembaruan SOP dan penerapan sistem pelayanan berbasis elektronik yang modern.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">👥</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Penataan Sistem Manajemen SDM</h3>
+                    </div>
+                    <p class="text-gray-600">Mengelola SDM secara profesional dan transparan untuk memastikan setiap pegawai memiliki kompetensi dan kinerja yang unggul.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">🎯</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Penguatan Akuntabilitas Kinerja</h3>
+                    </div>
+                    <p class="text-gray-600">Memastikan setiap kinerja terukur, dievaluasi, dan dilaporkan secara akuntabel untuk mencapai target organisasi yang telah ditetapkan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">🔎</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Penguatan Pengawasan</h3>
+                    </div>
+                    <p class="text-gray-600">Mencegah korupsi melalui sistem pengawasan internal yang efektif, termasuk manajemen risiko dan pengendalian gratifikasi.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center mb-3">
+                        <span class="text-3xl mr-4 text-[#EE9B00]">⭐</span>
+                        <h3 class="text-xl font-bold text-[#0A9396]">Penguatan Kualitas Pelayanan Publik</h3>
+                    </div>
+                    <p class="text-gray-600">Berkomitmen memberikan pelayanan prima yang memenuhi dan melampaui ekspektasi masyarakat melalui evaluasi berkelanjutan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">Indikator Kinerja Utama 2024</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center text-[#0A9396] mb-2">Indeks Kepuasan Konsumen (IKK)</h3>
+                    <p class="text-center text-gray-600 mb-4">Mengukur tingkat kepuasan pengguna terhadap layanan yang diterima.</p>
+                    <div class="chart-container">
+                        <canvas id="ikkChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center text-[#0A9396] mb-2">Indeks Perilaku Anti Korupsi (IPAK)</h3>
+                    <p class="text-center text-gray-600 mb-4">Menilai persepsi dan pengalaman masyarakat terkait perilaku anti korupsi di lingkungan BPS.</p>
+                    <div class="chart-container">
+                        <canvas id="ipakChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center text-[#0A9396] mb-2">Nilai SAKIP</h3>
+                     <p class="text-center text-gray-600 mb-4">Menggambarkan tingkat akuntabilitas kinerja instansi pemerintah.</p>
+                    <div class="chart-container">
+                        <canvas id="sakipChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center text-[#0A9396] mb-2">Indeks Pelayanan Publik (IPP)</h3>
+                    <p class="text-center text-gray-600 mb-4">Mengukur kualitas penyelenggaraan pelayanan publik secara keseluruhan.</p>
+                    <div class="chart-container">
+                        <canvas id="ippChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="award" class="bg-gradient-to-r from-[#0A9396] to-[#005F73] text-white p-8 rounded-2xl shadow-xl text-center">
+            <h2 class="text-3xl font-bold mb-2">Penghargaan Satker 'Informatif'</h2>
+            <p class="text-lg text-[#E9D8A6] mb-4">Dari Komisi Informasi Provinsi Sumatera Utara</p>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed">
+                Penghargaan ini adalah bukti nyata dari **komitmen kami terhadap keterbukaan informasi publik**. Kami berupaya untuk selalu menyediakan data dan informasi yang akurat, mudah diakses, dan relevan bagi seluruh masyarakat.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#005F73] text-white text-center p-6 mt-16">
+        <p>&copy; 2025 BPS Provinsi Sumatera Utara. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 <= maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const commonTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            }
+        };
+
+        function createDoughnutChart(ctx, label, value, maxValue, color) {
+            return new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [label, 'Sisa'],
+                    datasets: [{
+                        data: [value, maxValue - value],
+                        backgroundColor: [color, '#E5E7EB'],
+                        borderColor: ['#FFFFFF', '#FFFFFF'],
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    ...commonTooltipOptions,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        ...commonTooltipOptions.plugins,
+                        datalabels: {
+                            display: false
+                        },
+                        centerText: {
+                            display: true,
+                            text: `${value}`,
+                            color: '#005F73',
+                            font: {
+                                size: '40',
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'centerText',
+                    beforeDraw: function(chart) {
+                        const {
+                            ctx,
+                            width,
+                            height
+                        } = chart;
+                        const config = chart.options.plugins.centerText;
+                        if (config && config.display) {
+                            ctx.restore();
+                            const font = `${config.font.weight} ${config.font.size}px Inter`;
+                            ctx.font = font;
+                            ctx.textBaseline = 'middle';
+                            ctx.textAlign = 'center';
+                            ctx.fillStyle = config.color;
+                            const text = config.text;
+                            const textX = width / 2;
+                            const textY = height / 2;
+                            ctx.fillText(text, textX, textY);
+                            ctx.save();
+                        }
+                    }
+                }]
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createDoughnutChart(document.getElementById('ikkChart').getContext('2d'), 'IKK', 97.58, 100, '#0A9396');
+            createDoughnutChart(document.getElementById('ipakChart').getContext('2d'), 'IPAK', 98.13, 100, '#94D2BD');
+            createDoughnutChart(document.getElementById('sakipChart').getContext('2d'), 'SAKIP', 76.75, 100, '#EE9B00');
+            
+            const ippValue = 4.67;
+            const ippMax = 5;
+            const ippChart = new Chart(document.getElementById('ippChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['IPP', 'Sisa'],
+                    datasets: [{
+                        data: [ippValue, ippMax - ippValue],
+                        backgroundColor: ['#CA6702', '#E5E7EB'],
+                        borderColor: ['#FFFFFF', '#FFFFFF'],
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                     ...commonTooltipOptions,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        ...commonTooltipOptions.plugins,
+                        centerText: {
+                            display: true,
+                            text: `${ippValue}`,
+                            color: '#005F73',
+                            font: {
+                                size: '40',
+                                weight: 'bold'
+                            },
+                        },
+                        subtitle: {
+                             display: true,
+                             text: 'PRIMA',
+                             color: '#005F73',
+                             font: {
+                                 size: 16,
+                                 weight: 'bold'
+                             },
+                             position: 'bottom',
+                             padding: {
+                                 top: -30
+                             }
+                        }
+                    }
+                },
+                 plugins: [{
+                    id: 'centerText',
+                    beforeDraw: function(chart) {
+                        const {
+                            ctx,
+                            width,
+                            height
+                        } = chart;
+                        const config = chart.options.plugins.centerText;
+                        const subtitleConfig = chart.options.plugins.subtitle;
+                        if (config && config.display) {
+                            ctx.restore();
+                            ctx.font = `${config.font.weight} ${config.font.size}px Inter`;
+                            ctx.textBaseline = 'middle';
+                            ctx.textAlign = 'center';
+                            ctx.fillStyle = config.color;
+                            ctx.fillText(config.text, width / 2, height / 2 - 10);
+
+                            if(subtitleConfig && subtitleConfig.display) {
+                                ctx.font = `${subtitleConfig.font.weight} ${subtitleConfig.font.size}px Inter`;
+                                ctx.fillStyle = subtitleConfig.color;
+                                ctx.fillText(subtitleConfig.text, width / 2, height / 2 + 20);
+                            }
+                            ctx.save();
+                        }
+                    }
+                }]
+            });
+        });
+    </script>
+</body>
+</html>
